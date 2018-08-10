@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
-import 'src/article.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'src/article.dart';
 
 void main() => runApp(new MyApp());
 
@@ -52,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildItem(Article article) {
     return Padding(
+        key: Key(article.text),
         padding: const EdgeInsets.all(16.0),
         child: new ExpansionTile(
             title: new Text(article.text, style: new TextStyle(fontSize: 24.0)),
@@ -72,13 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               )
-            ]
-//          onTap: () async{
-//            final fakeUrl = "http://${article.domain}";
-//            if (await canLaunch(fakeUrl)) {
-//              launch(fakeUrl);
-//            }
-            //     }
-            ));
+            ]));
   }
 }
