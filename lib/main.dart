@@ -62,12 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  new Text("${article.commentsCount} comments"),
+                  new Text("${article.score} comments"),
                   new IconButton(
                     color: Colors.green,
                     icon: new Icon(Icons.launch),
                     onPressed: () async {
-                      final fakeUrl = "http://${article.domain}";
+                      final fakeUrl = "http://${article.url}";
                       if (await canLaunch(fakeUrl)) {
                         launch(fakeUrl);
                       }
