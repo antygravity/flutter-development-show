@@ -19,18 +19,6 @@ class Article {
   }
 }
 
-List<int> parseTopStories(String jsonString) {
-  final parsed = json.jsonDecode(jsonString);
-  final listOfIds = List<int>.from(parsed);
-  return listOfIds;
-}
-
-Article parseArticle(String jsonString) {
-  final parsed = json.jsonDecode(jsonString);
-  Article article = Article.fromJson(parsed);
-  return article;
-}
-
 final articles = [
   new Article("Wiadomosci z Onet", "onet.pl", "John Go", 1232, 45),
   new Article("Wypadek autobusu w trakcie wycieczki do Koziej Wólki", "wp.pl",
